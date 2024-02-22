@@ -4,6 +4,7 @@ using UnityEngine;
 namespace {namespace}
 {
     [RequireComponent(typeof({target}))]
+    [AddComponentMenu("Data Based Companion/{target_short} Companion")]
     public class DataBased{target_short} : DataBasedComponent<{target}>
     {
 	    [SerializeField] {target_short}Data data;

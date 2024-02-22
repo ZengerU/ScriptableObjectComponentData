@@ -9,7 +9,7 @@ namespace ComponentDatafier.Editor
     public class ComponentClassCreator
     {
         const string FileName = "Component.template";
-        readonly string _templateLocation = Path.Combine(Application.dataPath, "ScriptableComponentData", "Templates");
+        readonly string _templateLocation = Path.Combine(Application.dataPath, "ComponentDatafier", "Templates");
         const string SinglePropertyTemplate = "\t\t\tif (data.{name}.isActive) Target.{name} = data.{name}.value;";
         
         public string CreateComponentClass(Type objectType,

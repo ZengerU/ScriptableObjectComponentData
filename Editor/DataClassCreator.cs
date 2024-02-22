@@ -9,7 +9,7 @@ namespace ComponentDatafier.Editor
     public class DataClassCreator
     {
         const string FileName = "Data.template";
-        readonly string _templateLocation = Path.Combine(Application.dataPath, "ScriptableComponentData", "Templates");
+        readonly string _templateLocation = Path.Combine(Application.dataPath, "ComponentDatafier", "Templates");
         const string SinglePropertyTemplate = "public DataEntry<{0}> {1};";
         const string ActionRegisterTemplate = "\t\t\t{0}.RegisterAction(DataUpdated);";
         const string ActionUnregisterTemplate = "\t\t\t{0}.UnregisterAction();";
