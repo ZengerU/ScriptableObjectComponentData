@@ -1,4 +1,4 @@
-using ScriptableComponentData.Runtime;
+using ComponentDatafier.Runtime;
 
 namespace {namespace}
 {

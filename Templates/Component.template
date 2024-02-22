@@ -1,5 +1,5 @@
+using ComponentDatafier.Runtime;
 using UnityEngine;
-using ScriptableComponentData.Runtime;
 
 namespace {namespace}
 {
