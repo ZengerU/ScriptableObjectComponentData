@@ -28,7 +28,7 @@ Clone or download the repository and place its contents into the Assets folder.
 If you want to use the sample folder but need to relocate the files outside of Assets, you may need to edit two locations:
 1. [This line](https://github.com/ZengerU/ComponentDatafier/blob/main/Editor/ComponentClassCreator.cs#L12) to specify the new location of the component class template.
 2. [This line](https://github.com/ZengerU/ComponentDatafier/blob/main/Editor/DataClassCreator.cs#L12) to specify the new location of the data class template.
-3. 
+
 Note: If the files are not found in the specified location, the Assets folder is searched by file name, and the first result is used.
 
 ## License
