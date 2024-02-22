@@ -1,51 +1,34 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-# Unity Folder Templator
-A small tool to create templates for folders with certain files and subdirectories within.
+# Component Datafier
+
+This tool enables the conversion of publicly available fields from any Unity Component into scriptable objects.
 
 - [How to use](#how-to-use)
-- [Install](#install)
+- [Installation](#install)
 - [Configuration](#configuration)
-
-<!-- toc -->
 
 ## How to use
 
-The package comes with a sample folder template. To use it:
-1. Right click anywhere in the project panel and navigate to `Create/Folder Templates/Featuere`  
-![1](https://github.com/ZengerU/UnityFolderTemplator/assets/33237571/6d84d2b5-c108-47e5-b2eb-d16d4f965fad)
-2. In the opened up window, enter a folder name and select which folders/files you want to create.  
-![2](https://github.com/ZengerU/UnityFolderTemplator/assets/33237571/b4556a45-6107-4941-8c79-154fe86f13b7)
-3. Press create!  
-![3](https://github.com/ZengerU/UnityFolderTemplator/assets/33237571/2392c177-c67f-4455-9705-3c559b637d1e)
+1. Right-click on the desired component and choose` Convert Data to ScriptableObject`.
+![image](https://github.com/ZengerU/ComponentDatafier/assets/33237571/e6916477-6076-43db-ab48-e648e16cd46b)
+2. In the project window, find the newly created scriptable object and generate an instance of it. It should be located under `Create/ScriptableData/<Namespace>/<ComponentName>`.
+![image](https://github.com/ZengerU/ComponentDatafier/assets/33237571/7d144a74-7ec7-44bb-9ae2-d4c30eb5816b)
+3. Attach the newly created companion component to a component with the desired data. The companion's name should be under `Data Based Companion/<ComponentName> Companion`.
+![image](https://github.com/ZengerU/ComponentDatafier/assets/33237571/06178877-0fe5-447c-8a95-9b5e3b28fbbc)
+4. Connect the scriptable object created in step 2 to the component created in step 3, and you're finished!
 
 
-## Install
-Clone or download the repository and place the contents in the `Assets` folder.
+## Installation
+Clone or download the repository and place its contents into the Assets folder.
 
 ## Configuration
 
-If you wish to use the sample folder but want to move the files outside of `Assets` note that there is a hard path you need to edit. Change [this](https://github.com/ZengerU/UnityFolderTemplator/blob/39e66710cfb7003279a5befa845aea518e13bd5a/Samples/Editor/FeatureFolderCreator.cs#L19) line to reflect the new location.
-
-To create new folder templates:
-1. Create a class and inherit from `Creator`.
-2. Create a context menu action:
-```
-        [MenuItem("Assets/Create/Folder Templates/<TEMPLATE_NAME>", false, 19)]
-        public static void ShowMyEditor()
-        {
-            EditorWindow wnd = GetWindow<FeatureFolderCreator>(true, "<TEMPLATE_NAME> Folder Creator", true);
-            wnd.maxSize = new Vector2(400, 600);
-        }
-```
-Change <TEMPLATE_NAME> to a user friend name for template. Additionally you can set the values in `wnd.maxSize = new Vector2(400, 600);` for a different max size.
-3. Override `Folders` property.
-```
-protected override List<Folder> Folders { get; } = new()
-{
-}
-```
-4. Populate the newly created `Folders` property with your structure.
+If you want to use the sample folder but need to relocate the files outside of Assets, you may need to edit two locations:
+1. [This line](https://github.com/ZengerU/ComponentDatafier/blob/main/Editor/ComponentClassCreator.cs#L12) to specify the new location of the component class template.
+2. [This line](https://github.com/ZengerU/ComponentDatafier/blob/main/Editor/DataClassCreator.cs#L12) to specify the new location of the data class template.
+3. 
+Note: If the files are not found in the specified location, the Assets folder is searched by file name, and the first result is used.
 
 ## License
 
