@@ -1,0 +1,21 @@
+using ScriptableComponentData.Runtime;
+
+namespace {namespace}
+{
+    [UnityEngine.CreateAssetMenu(fileName = "{target_short}Data", menuName = "ScriptableData/{path}/{target_short}Data", order = 0)]
+    public class {target_short}Data : DataObject
+    {
+{properties}
+   
+        public override void SubscribeToEntries()
+        {
+{action_registers}
+        }
+    
+        public override void UnsubscribeToEntries()
+        {
+{action_unregisters}
+        }
+        
+    }
+}

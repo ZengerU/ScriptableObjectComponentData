@@ -1,0 +1,39 @@
+using UnityEngine;
+using ScriptableComponentData.Runtime;
+
+namespace {namespace}
+{
+    [RequireComponent(typeof({target}))]
+    public class DataBased{target_short} : DataBasedComponent<{target}>
+    {
+	    [SerializeField] {target_short}Data data;
+
+	    public {target_short}Data Data
+	    {
+		    get => data;
+		    set
+		    {
+			    data.DataUpdated -= SetValues;
+			    data = value;
+			    data.DataUpdated += SetValues;
+			    SetValues();
+		    }
+	    }
+        
+        protected override void Awake()
+        {
+	        base.Awake();
+	        data.DataUpdated += SetValues;
+        }
+
+        void OnDestroy()
+        {
+            data.DataUpdated -= SetValues;
+        }
+
+        protected override void SetValues()
+        {
+{properties}
+        }
+    }
+}
