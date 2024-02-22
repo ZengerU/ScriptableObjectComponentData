@@ -3,6 +3,7 @@
 # Component Datafier
 
 This tool enables the conversion of publicly available fields from any Unity Component into scriptable objects.
+![image](https://github.com/ZengerU/ComponentDatafier/assets/33237571/cee1c941-02e4-4fc3-a012-ad62ec8cd7f6)
 
 - [How to use](#how-to-use)
 - [Installation](#install)
