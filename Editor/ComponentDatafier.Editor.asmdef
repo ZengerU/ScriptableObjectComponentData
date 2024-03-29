@@ -1,8 +1,12 @@
 {
-    "name": "ScriptableComponentData",
+    "name": "ComponentDatafier.Editor",
     "rootNamespace": "",
-    "references": [],
-    "includePlatforms": [],
+    "references": [
+        "GUID:06040b91bf8ee4f41a437c5dcb24cdab"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
